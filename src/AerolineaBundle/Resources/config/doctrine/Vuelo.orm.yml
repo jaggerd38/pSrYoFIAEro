@@ -1,0 +1,38 @@
+AerolineaBundle\Entity\Vuelo:
+    type: entity
+    table: Vuelo
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        aerolinea:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: Aerolinea
+        destino:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: Destino
+    manyToMany:
+        pasajero:
+            targetEntity: Pasajero
+            inversedBy: vuelo
+            joinTable:
+                name: vuelo__pasajero
+                joinColumns:
+                    vuelo_id: ~
+                inverseJoinColumns:
+                    pasajero_id: ~
+    lifecycleCallbacks: {  }

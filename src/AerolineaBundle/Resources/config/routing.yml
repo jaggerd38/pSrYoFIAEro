@@ -1,0 +1,7 @@
+aerolinea_vuelo:
+    resource: "@AerolineaBundle/Resources/config/routing/vuelo.yml"
+    prefix:   /vuelo
+
+aerolinea_homepage:
+    path:     /
+    defaults: { _controller: AerolineaBundle:Default:index }
