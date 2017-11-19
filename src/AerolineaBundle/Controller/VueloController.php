@@ -78,7 +78,7 @@ class VueloController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('vuelo_edit', array('id' => $vuelo->getId()));
+            return $this->redirectToRoute('vuelo_show', array('id' => $vuelo->getId()));
         }
 
         return $this->render('vuelo/edit.html.twig', array(

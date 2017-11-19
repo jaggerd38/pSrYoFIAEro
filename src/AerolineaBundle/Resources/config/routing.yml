@@ -2,6 +2,10 @@ aerolinea_vuelo:
     resource: "@AerolineaBundle/Resources/config/routing/vuelo.yml"
     prefix:   /vuelo
 
+aerolinea_pasajero:
+        resource: "@AerolineaBundle/Resources/config/routing/pasajero.yml"
+        prefix:   /pasajero
+
 aerolinea_homepage:
     path:     /
     defaults: { _controller: AerolineaBundle:Default:index }

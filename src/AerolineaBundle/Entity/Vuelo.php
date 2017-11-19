@@ -44,7 +44,8 @@ class Vuelo
 
     public function __toString()
     {
-        return $this->name;
+      $numero = (string)$this->getId();
+        return $numero;
     }
 
 

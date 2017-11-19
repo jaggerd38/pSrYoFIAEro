@@ -1,37 +1,59 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Vuelos list</h1>
+    <h1>Vuelos</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
+
+    <!-- Example DataTables Card-->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Todos los Vuelos</div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Número de Vuelo</th>
                 <th>Aerolinea</th>
                 <th>Destino</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for vuelo in vuelos %}
-            <tr>
-                <td><a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">{{ vuelo.id }}</a></td>
-                <td>{{ vuelo.aerolinea }}</td>
-                <td>{{ vuelo.destino }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('vuelo_edit', { 'id': vuelo.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <th>Opcion 1</th>
+                <th>Opción 2</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Número de Vuelo</th>
+                <th>Aerolinea</th>
+                <th>Destino</th>
+                <th>Opcion 1</th>
+                <th>Opción 2</th>
+              </tr>
+            </tfoot>
+            {% for vuelo in vuelos %}
+              <tbody>
+                <tr>
+                  <td><a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">{{ vuelo.id }}</a></td>
+                  <td>{{ vuelo.aerolinea }}</td>
+                  <td>{{ vuelo.destino }}</td>
+                  <td>
+                    <a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">Detalles</a>
+                  </td>
+                  <td>
+                    <a href="{{ path('vuelo_edit', { 'id': vuelo.id }) }}">Editar</a>
+                  </td>
+                </tr>
+                <tr>
+              </tbody>
+            {% endfor %}
+
+          </table>
+        </div>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+    </div>
+
+
+
 
     <ul>
         <li>

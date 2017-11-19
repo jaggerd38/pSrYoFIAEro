@@ -17,6 +17,12 @@
                 <th>Destino</th>
                 <td>{{ vuelo.destino }}</td>
             </tr>
+            <tr>
+              <th>Pasajeros</th>
+                {% for pasajero in vuelo.pasajero %}
+                  <td>{{ pasajero.name }}<td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 

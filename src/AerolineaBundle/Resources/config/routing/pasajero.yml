@@ -1,0 +1,24 @@
+pasajero_index:
+    path:     /
+    defaults: { _controller: "AerolineaBundle:Pasajero:index" }
+    methods:  GET
+
+pasajero_show:
+    path:     /{id}/show
+    defaults: { _controller: "AerolineaBundle:Pasajero:show" }
+    methods:  GET
+
+pasajero_new:
+    path:     /new
+    defaults: { _controller: "AerolineaBundle:Pasajero:new" }
+    methods:  [GET, POST]
+
+pasajero_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AerolineaBundle:Pasajero:edit" }
+    methods:  [GET, POST]
+
+pasajero_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AerolineaBundle:Pasajero:delete" }
+    methods:  DELETE
