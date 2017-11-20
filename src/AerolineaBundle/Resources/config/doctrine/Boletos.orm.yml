@@ -1,0 +1,53 @@
+AerolineaBundle\Entity\Boletos:
+    type: entity
+    table: boletos
+    indexes:
+        IX_Relationship5:
+            columns:
+                - Id_Vuelo
+        IX_Relationship6:
+            columns:
+                - Id_Pasajero
+    id:
+        idBoleto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Boleto
+            generator:
+                strategy: IDENTITY
+    fields:
+        clase:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: true
+            column: Clase
+        costo:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Costo
+        numeroasiento:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: NumeroAsiento
+        idPasajero:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: Id_Pasajero
+        idVuelo:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: Id_Vuelo
+    lifecycleCallbacks: {  }

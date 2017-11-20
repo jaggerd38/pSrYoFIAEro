@@ -3,13 +3,10 @@
 {% block body %}
 
 
-
-
-
     <body class="bg-dark">
       <div class="container">
         <div class="card card-register mx-auto mt-5">
-          <div class="card-header"><h4>Agregar Pasajero</h4></div>
+          <div class="card-header"><h4>Agregar Avión</h4></div>
           <div class="card-body">
 
             {{ form_start(edit_form) }}
@@ -17,28 +14,27 @@
               <div class="form-group">
                 <div class="form-row">
                   <div class="col-md-12">
-                    {{form_label(edit_form.name,'Nombre Completo')}}
-                    {{form_widget(edit_form.name,{'attr':{'class' : 'form-control'}}) }}
+                    {{form_label(edit_form.nombreavion,'Nombre del Avión')}}
+                    {{form_widget(edit_form.nombreavion,{'attr':{'class' : 'form-control'}}) }}
                   </div>
 
                 </div>
               </div>
               <div class="form-group">
-                {{form_label(edit_form.genero,'Genero')}}
-                {{form_widget(edit_form.genero,{'attr':{'class' : 'form-control'}}) }}
+                {{form_label(edit_form.modelo,'Modelo')}}
+                {{form_widget(edit_form.modelo,{'attr':{'class' : 'form-control'}}) }}
               </div>
               <div class="form-group">
-                {{form_label(edit_form.vuelo,'Vuelo No.')}}
-                {{form_widget(edit_form.vuelo,{'attr':{'class' : 'form-control'}}) }}
+                {{form_label(edit_form.capacidad,'Capacidad')}}
+                {{form_widget(edit_form.capacidad,{'attr':{'class' : 'form-control'}}) }}
               </div>
 
               <input class="btn btn-primary btn-block" type="submit" value="Editar" />
-              <a class="btn btn-secundary btn-block" href="{{ path('pasajero_index') }}">Ir a la lista</a>
+              <a class="btn btn-secundary btn-block" href="{{ path('aviones_index') }}">Ir a la lista</a>
               {{ form_end(edit_form) }}
           </div>
         </div>
       </div>
 
     </body>
-
 {% endblock %}

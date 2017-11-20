@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Boletos" table="boletos">
+    <indexes>
+      <index name="IX_Relationship5" columns="Id_Vuelo"/>
+      <index name="IX_Relationship6" columns="Id_Pasajero"/>
+    </indexes>
+    <id name="idBoleto" type="integer" column="Id_Boleto">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="clase" type="string" column="Clase" length="200" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="costo" type="integer" column="Costo" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="numeroasiento" type="integer" column="NumeroAsiento" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idPasajero" type="integer" column="Id_Pasajero" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idVuelo" type="integer" column="Id_Vuelo" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

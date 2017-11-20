@@ -27,5 +27,10 @@ AerolineaBundle\Entity\Pasajero:
     manyToMany:
         vuelo:
             targetEntity: Vuelo
+            cascade: {  }
+            fetch: LAZY
             mappedBy: pasajero
+            inversedBy: null
+            joinTable: null
+            orderBy: null
     lifecycleCallbacks: {  }

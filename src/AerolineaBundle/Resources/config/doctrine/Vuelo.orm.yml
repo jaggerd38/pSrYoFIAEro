@@ -28,11 +28,19 @@ AerolineaBundle\Entity\Vuelo:
     manyToMany:
         pasajero:
             targetEntity: Pasajero
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
             inversedBy: vuelo
             joinTable:
                 name: vuelo__pasajero
                 joinColumns:
-                    vuelo_id: ~
+                    -
+                        name: vuelo_id
+                        referencedColumnName: id
                 inverseJoinColumns:
-                    pasajero_id: ~
+                    -
+                        name: pasajero_id
+                        referencedColumnName: id
+            orderBy: null
     lifecycleCallbacks: {  }

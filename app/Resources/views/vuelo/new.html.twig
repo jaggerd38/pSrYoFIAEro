@@ -1,16 +1,54 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Agregar Vuelo</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('vuelo_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <body class="bg-dark">
+      <div class="container">
+        <div class="card card-register mx-auto mt-5">
+          <div class="card-header"><h4>Agregar Vuelo</h4></div>
+          <div class="card-body">
+
+            {{ form_start(form) }}
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-12">
+                    {{form_label(form.aerolinea,'Aerolinea')}}
+                    {{form_widget(form.aerolinea,{'attr':{'class' : 'form-control'}}) }}
+                  </div>
+
+                </div>
+              </div>
+              <div class="form-group">
+                {{form_label(form.destino,'Destino del Vuelo')}}
+                {{form_widget(form.destino,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-12">
+                    {{form_label(form.pasajero,'Pasajeros')}}
+                    {{form_widget(form.pasajero,{'attr':{'class' : 'form-control'}}) }}
+                  </div>
+
+                </div>
+              </div>
+              <input class="btn btn-primary btn-block" type="submit" value="Crear" />
+              <a class="btn btn-secundary btn-block" href="{{ path('vuelo_index') }}">Ir a la lista</a>
+              {{ form_end(form) }}
+          </div>
+        </div>
+      </div>
+      
+    </body>
+
+
+
+
+
+
+
+
+
+
 {% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Boletos</h1>
+
+<!-- Example DataTables Card-->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-table"></i> Todos los Vuelos</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Número de Boleto</th>
+            <th>Clase</th>
+            <th>Costo</th>
+            <th>No. Asiento</th>
+            <th>Pasajero</th>
+            <th>Vuelo No.</th>
+            <th>Opcion 1</th>
+            <th>Opción 2</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Número de Boleto</th>
+            <th>Clase</th>
+            <th>Costo</th>
+            <th>No. Asiento</th>
+            <th>Pasajero</th>
+            <th>Vuelo No.</th>
+            <th>Opcion 1</th>
+            <th>Opción 2</th>
+          </tr>
+        </tfoot>
+        {% for boleto in boletos %}
+          <tbody>
+            <tr>
+              <td><a href="{{ path('boletos_show', { 'idBoleto': boleto.idBoleto }) }}">{{ boleto.idBoleto }}</a></td>
+              <td>{{ boleto.clase }}</td>
+              <td>{{ boleto.costo }}</td>
+              <td>{{ boleto.numeroasiento }}</td>
+              <td>{{ boleto.idPasajero }}</td>
+              <td>{{ boleto.idVuelo }}</td>
+              <td>
+                <a href="{{ path('boletos_show', { 'idBoleto': boleto.idBoleto }) }}">Detalles</a>
+              </td>
+              <td>
+                <a href="{{ path('boletos_edit', { 'idBoleto': boleto.idBoleto }) }}">Editar</a>
+              </td>
+            </tr>
+            <tr>
+          </tbody>
+        {% endfor %}
+
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+
+{% endblock %}

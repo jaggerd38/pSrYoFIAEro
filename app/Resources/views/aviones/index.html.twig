@@ -1,7 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Vuelos</h1>
+    <h1>Aviones</h1>
+
+
+
+
+
+
 
 
     <!-- Example DataTables Card-->
@@ -13,33 +19,36 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr>
-                <th>Número de Vuelo</th>
-                <th>Aerolinea</th>
-                <th>Destino</th>
+                <th>Número de Avión</th>
+                <th>Nombre del Avión</th>
+                <th>Modelo</th>
+                <th>Capacidad</th>
                 <th>Opcion 1</th>
                 <th>Opción 2</th>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <th>Número de Vuelo</th>
-                <th>Aerolinea</th>
-                <th>Destino</th>
+                <th>Número de Avión</th>
+                <th>Nombre del Avión</th>
+                <th>Modelo</th>
+                <th>Capacidad</th>
                 <th>Opcion 1</th>
                 <th>Opción 2</th>
               </tr>
             </tfoot>
-            {% for vuelo in vuelos %}
+            {% for avione in aviones %}
               <tbody>
                 <tr>
-                  <td><a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">{{ vuelo.id }}</a></td>
-                  <td>{{ vuelo.aerolinea }}</td>
-                  <td>{{ vuelo.destino }}</td>
+                  <td><a href="{{ path('aviones_show', { 'idAvion': avione.idAvion }) }}">{{ avione.idAvion }}</a></td>
+                  <td>{{ avione.nombreavion }}</td>
+                  <td>{{ avione.modelo }}</td>
+                  <td>{{ avione.capacidad }}</td>
                   <td>
-                    <a href="{{ path('vuelo_show', { 'id': vuelo.id }) }}">Detalles</a>
+                    <a href="{{ path('aviones_show', { 'idAvion': avione.idAvion }) }}">Detalles</a>
                   </td>
                   <td>
-                    <a href="{{ path('vuelo_edit', { 'id': vuelo.id }) }}">Editar</a>
+                    <a href="{{ path('aviones_show', { 'idAvion': avione.idAvion }) }}">Editar</a>
                   </td>
                 </tr>
                 <tr>

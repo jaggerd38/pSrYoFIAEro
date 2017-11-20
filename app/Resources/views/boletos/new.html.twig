@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header"><h4>Nuevo Boleto</h4></div>
+      <div class="card-body">
+
+        {{ form_start(form) }}
+
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                {{form_label(form.clase,'CLase')}}
+                {{form_widget(form.clase,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            {{form_label(form.costo,'Costo')}}
+            {{form_widget(form.costo,{'attr':{'class' : 'form-control'}}) }}
+          </div>
+          <div class="form-group">
+            {{form_label(form.numeroasiento,'No. Asiento')}}
+            {{form_widget(form.numeroasiento,{'attr':{'class' : 'form-control'}}) }}
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                {{form_label(form.idPasajero,'Pasajero')}}
+                {{form_widget(form.idPasajero,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+              <div class="col-md-6">
+                {{form_label(form.idVuelo,'Vuelo No.')}}
+                {{form_widget(form.idVuelo,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+            </div>
+
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" value="Crear" />
+          <a class="btn btn-secundary btn-block" href="{{ path('boletos_index') }}">Ir a la lista</a>
+          {{ form_end(form) }}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+
+{% endblock %}

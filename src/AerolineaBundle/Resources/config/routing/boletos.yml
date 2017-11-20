@@ -1,0 +1,24 @@
+boletos_index:
+    path:     /
+    defaults: { _controller: "AerolineaBundle:Boletos:index" }
+    methods:  GET
+
+boletos_show:
+    path:     /{idBoleto}/show
+    defaults: { _controller: "AerolineaBundle:Boletos:show" }
+    methods:  GET
+
+boletos_new:
+    path:     /new
+    defaults: { _controller: "AerolineaBundle:Boletos:new" }
+    methods:  [GET, POST]
+
+boletos_edit:
+    path:     /{idBoleto}/edit
+    defaults: { _controller: "AerolineaBundle:Boletos:edit" }
+    methods:  [GET, POST]
+
+boletos_delete:
+    path:     /{idBoleto}/delete
+    defaults: { _controller: "AerolineaBundle:Boletos:delete" }
+    methods:  DELETE

@@ -14,5 +14,15 @@
         <option name="fixed"/>
       </options>
     </field>
+    <many-to-many field="pasajero" target-entity="Pasajero" inversed-by="vuelo" fetch="LAZY">
+      <join-table name="vuelo__pasajero">
+        <join-columns>
+          <join-column name="vuelo_id" referenced-column-name="id"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="pasajero_id" referenced-column-name="id"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
   </entity>
 </doctrine-mapping>

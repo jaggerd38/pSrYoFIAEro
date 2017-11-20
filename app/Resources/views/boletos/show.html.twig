@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <h1>Boleto No.{{ boleto.idBoleto }} </h1>
 
-    <h1>Vuelo No. {{vuelo.id}}</h1>
+
 
 
 
@@ -15,28 +16,34 @@
 
                   <tbody>
                     <tr>
-                      <td>
-                        <td><b>Aerolínea</b></td>
-                        <td>{{ vuelo.aerolinea }}</td>
+                    	<td>
+                        <td><b>Clase</b></td>
+                        <td>{{ boleto.clase }}</td>
                       </td>
                     </tr>
 
                     <tr>
                       <td>
-                        <td><b>Destino</b></td>
-                        <td>{{ vuelo.destino }}</td>
+                        <td><b>Costo</b></td>
+                        <td>{{ boleto.costo }}</td>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <td><b>Pasajeros</b></td>
-                        <ol>
-                          <td>
-                            {% for pasajero in vuelo.pasajero %}
-                              <li>{{ pasajero.name }}</li>
-                            {% endfor %}
-                          </td>
-                        <ol>
+                        <td><b>No. Asiento</b></td>
+                        <td>{{ boleto.costo }}</td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <td><b>Pasajero</b></td>
+                        <td>{{ boleto.idPasajero }}</td>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <td><b>Vuelo No.</b></td>
+                        <td>{{ boleto.idVuelo }}</td>
                       </td>
                     </tr>
 
@@ -44,10 +51,7 @@
                       <td>
                         <td></td>
                         <td>
-
-                          <a href="{{ path('vuelo_edit', { 'id': vuelo.id }) }}">Editar</a>
-                          <br>
-                          <a href="{{ path('vuelo_index') }}">Regresar</a>
+                          <a href="{{ path('boletos_edit', { 'idBoleto': boleto.idBoleto }) }}">Editar</a>
                           {{ form_start(delete_form) }}
                               <input type="submit" value="Eliminar">
                           {{ form_end(delete_form) }}

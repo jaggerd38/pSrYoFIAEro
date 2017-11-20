@@ -1,0 +1,35 @@
+AerolineaBundle\Entity\Aviones:
+    type: entity
+    table: aviones
+    id:
+        idAvion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Avion
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreavion:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: true
+            column: NombreAvion
+        modelo:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: true
+            column: Modelo
+        capacidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Capacidad
+    lifecycleCallbacks: {  }

@@ -1,0 +1,24 @@
+aviones_index:
+    path:     /
+    defaults: { _controller: "AerolineaBundle:Aviones:index" }
+    methods:  GET
+
+aviones_show:
+    path:     /{idAvion}/show
+    defaults: { _controller: "AerolineaBundle:Aviones:show" }
+    methods:  GET
+
+aviones_new:
+    path:     /new
+    defaults: { _controller: "AerolineaBundle:Aviones:new" }
+    methods:  [GET, POST]
+
+aviones_edit:
+    path:     /{idAvion}/edit
+    defaults: { _controller: "AerolineaBundle:Aviones:edit" }
+    methods:  [GET, POST]
+
+aviones_delete:
+    path:     /{idAvion}/delete
+    defaults: { _controller: "AerolineaBundle:Aviones:delete" }
+    methods:  DELETE

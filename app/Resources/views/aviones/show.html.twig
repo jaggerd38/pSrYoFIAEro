@@ -1,9 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <h1>Vuelo No. {{vuelo.id}}</h1>
-
+    <h1>Avión No. {{ avione.idAvion }}</h1>
 
 
     <div class="card mb-3">
@@ -16,26 +14,21 @@
                   <tbody>
                     <tr>
                       <td>
-                        <td><b>Aerolínea</b></td>
-                        <td>{{ vuelo.aerolinea }}</td>
+                        <td><b>Nombre del avión</b></td>
+                        <td>{{ avione.nombreavion }}</td>
                       </td>
                     </tr>
 
                     <tr>
                       <td>
-                        <td><b>Destino</b></td>
-                        <td>{{ vuelo.destino }}</td>
+                        <td><b>Modelo</b></td>
+                        <td>{{ avione.modelo }}</td>
                       </td>
                     </tr>
                     <tr>
                       <td>
-                        <td><b>Pasajeros</b></td>
-                        <ol>
-                          <td>
-                            {% for pasajero in vuelo.pasajero %}
-                              <li>{{ pasajero.name }}</li>
-                            {% endfor %}
-                          </td>
+                        <td><b>Capacidad</b></td>
+                        <td>{{ avione.capacidad }}</td>
                         <ol>
                       </td>
                     </tr>
@@ -45,11 +38,11 @@
                         <td></td>
                         <td>
 
-                          <a href="{{ path('vuelo_edit', { 'id': vuelo.id }) }}">Editar</a>
+                          <a href="{{ path('aviones_edit', { 'idAvion': avione.idAvion }) }}">Editar</a>
                           <br>
-                          <a href="{{ path('vuelo_index') }}">Regresar</a>
+                          <a href="{{ path('aviones_index') }}">Regresar</a>
                           {{ form_start(delete_form) }}
-                              <input type="submit" value="Eliminar">
+                              <input type="submit" value="Delete">
                           {{ form_end(delete_form) }}
                         </td>
                       </td>
@@ -61,6 +54,4 @@
               </div>
             </div>
           </div>
-
-
 {% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header"><h4>Modificar Boleto</h4></div>
+      <div class="card-body">
+
+        {{ form_start(edit_form) }}
+
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12">
+                {{form_label(edit_form.clase,'CLase')}}
+                {{form_widget(edit_form.clase,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group">
+            {{form_label(edit_form.costo,'Costo')}}
+            {{form_widget(edit_form.costo,{'attr':{'class' : 'form-control'}}) }}
+          </div>
+          <div class="form-group">
+            {{form_label(edit_form.numeroasiento,'No. Asiento')}}
+            {{form_widget(edit_form.numeroasiento,{'attr':{'class' : 'form-control'}}) }}
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                {{form_label(edit_form.idPasajero,'Pasajero')}}
+                {{form_widget(edit_form.idPasajero,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+              <div class="col-md-6">
+                {{form_label(edit_form.idVuelo,'Vuelo No.')}}
+                {{form_widget(edit_form.idVuelo,{'attr':{'class' : 'form-control'}}) }}
+              </div>
+            </div>
+
+          </div>
+          <input class="btn btn-primary btn-block" type="submit" value="Editar" />
+          <a class="btn btn-secundary btn-block" href="{{ path('boletos_index') }}">Ir a la lista</a>
+          {{ form_end(edit_form) }}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+{% endblock %}
