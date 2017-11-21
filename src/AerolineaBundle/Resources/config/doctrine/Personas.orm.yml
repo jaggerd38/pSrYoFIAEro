@@ -1,0 +1,35 @@
+AerolineaBundle\Entity\Personas:
+    type: entity
+    table: personas
+    id:
+        idPersona:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_Persona
+            generator:
+                strategy: IDENTITY
+    fields:
+        usuarioPersona:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+            column: Usuario_Persona
+        passPersona:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+            column: pass_Persona
+        role:
+            type: string
+            nullable: true
+            length: 45
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -13,7 +13,29 @@ aerolinea_aviones:
 aerolinea_boletos:
         resource: "@AerolineaBundle/Resources/config/routing/boletos.yml"
         prefix:   /boletos
-        
+
 aerolinea_homepage:
     path:     /
     defaults: { _controller: AerolineaBundle:Default:index }
+
+login:
+    path: /login
+    defaults: {_controller: AerolineaBundle:Auth:login}
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+bufete_homepage:
+    path:     /home
+    defaults: { _controller: BufeteBundle:Default:index }
+
+bufete_home:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+cash_check:
+    path: /index.php/validacionEstudiante/{carne}
+    methods:  [GET]
